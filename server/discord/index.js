@@ -1,6 +1,6 @@
 import { initializeBot } from "../bot/index.js";
 
-export function initializeDiscord() {
-  console.log("Discord placeholder initialized");
-  initializeBot();
+export async function initializeDiscord() {
+  console.log("Initializing Discord...");
+  await initializeBot();
 }

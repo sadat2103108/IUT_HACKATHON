@@ -1,17 +1,15 @@
-import { registerRoutes } from "./routes/index.js";
-import { initializeSocket } from "./socket/index.js";
+import "dotenv/config";
 import { initializeDiscord } from "./discord/index.js";
 
-const PORT = process.env.PORT || 3000;
-
-function bootstrap() {
+async function bootstrap() {
   console.log("Server starting...");
+  console.log("Token loaded:", Boolean(process.env.DISCORD_BOT_TOKEN));
 
-  registerRoutes();
-  initializeSocket();
-  initializeDiscord();
+  await initializeDiscord();
 
-  console.log(`Server placeholder ready on port ${PORT}`);
+  console.log("Server ready");
 }
 
-bootstrap();
+bootstrap().catch((error) => {
+  console.error("Server failed to start:", error);
+});
