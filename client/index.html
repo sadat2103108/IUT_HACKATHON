@@ -1,0 +1,981 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  />
+
+  <meta
+    name="theme-color"
+    content="#071827"
+  />
+
+  <title>OfficePulse | Office Dashboard</title>
+
+  <link
+    rel="preconnect"
+    href="https://fonts.googleapis.com"
+  />
+
+  <link
+    rel="preconnect"
+    href="https://fonts.gstatic.com"
+    crossorigin
+  />
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+    rel="stylesheet"
+  />
+
+  <link
+    rel="stylesheet"
+    href="style.css"
+  />
+</head>
+
+<body>
+  <main class="dashboard">
+
+    <!-- =====================================================
+    HEADER
+    ====================================================== -->
+
+    <header class="topbar">
+
+      <section class="brand-card">
+        <div
+          class="brand-bolt"
+          aria-hidden="true"
+        >
+          ⚡
+        </div>
+
+        <div>
+          <h1>FC4</h1>
+          <p>Monitor. Save. Automate.</p>
+        </div>
+      </section>
+
+      <section class="title-card">
+        <h2>OFFICE DASHBOARD</h2>
+
+        <p>
+          Real-time monitoring of office devices and power usage
+        </p>
+      </section>
+
+      <section class="quick-cards">
+
+        <div class="mini-card">
+          <div class="mini-heading">
+            <span
+              class="blue-icon"
+              aria-hidden="true"
+            >
+              ◷
+            </span>
+
+            <strong id="currentTime">
+              09:10:47 PM
+            </strong>
+          </div>
+
+          <p id="currentDate">
+            Friday • July 03, 2026
+          </p>
+        </div>
+
+        <div class="mini-card status-mini-card">
+          <div class="mini-heading">
+            <span
+              class="green-dot"
+              aria-hidden="true"
+            ></span>
+
+            <strong>Office Status</strong>
+          </div>
+
+          <span
+            id="officeStatus"
+            class="status-pill"
+          >
+            OPERATIONAL
+          </span>
+        </div>
+
+      </section>
+    </header>
+
+    <!-- =====================================================
+    OFFICE OVERVIEW
+    ====================================================== -->
+
+    <section class="overview-grid">
+
+      <!-- ===================================================
+      CSS-BUILT OFFICE FLOOR PLAN
+      No image is used.
+      ==================================================== -->
+
+      <section class="floor-card">
+        <div class="floor-plan">
+
+          <!-- ===============================================
+          DRAWING ROOM
+          ================================================ -->
+
+          <section class="room drawing-room">
+
+            <span class="room-label orange">
+              DRAWING ROOM
+            </span>
+
+            <!-- Windows -->
+
+            <div
+              class="window window-top"
+              aria-hidden="true"
+            ></div>
+
+            <div
+              class="window window-left"
+              aria-hidden="true"
+            ></div>
+
+            <!-- Plants -->
+
+            <div
+              class="plant plant-a"
+              aria-hidden="true"
+            ></div>
+
+            <div
+              class="plant plant-b"
+              aria-hidden="true"
+            ></div>
+
+            <!-- Sofa -->
+
+            <div
+              class="sectional-sofa"
+              aria-hidden="true"
+            >
+              <span class="sofa-back"></span>
+              <span class="sofa-seat sofa-seat-1"></span>
+              <span class="sofa-seat sofa-seat-2"></span>
+              <span class="sofa-seat sofa-seat-3"></span>
+              <span class="sofa-arm sofa-arm-left"></span>
+              <span class="sofa-arm sofa-arm-right"></span>
+              <span class="sofa-leg sofa-leg-left"></span>
+              <span class="sofa-leg sofa-leg-right"></span>
+            </div>
+
+            <!-- Lounge Chair -->
+
+            <div
+              class="lounge-chair"
+              aria-hidden="true"
+            >
+              <span class="chair-back"></span>
+              <span class="chair-seat"></span>
+              <span class="chair-arm chair-arm-left"></span>
+              <span class="chair-arm chair-arm-right"></span>
+              <span class="chair-leg chair-leg-left"></span>
+              <span class="chair-leg chair-leg-right"></span>
+            </div>
+
+            <!-- Rug -->
+
+            <div
+              class="rug"
+              aria-hidden="true"
+            ></div>
+
+            <!-- Coffee Table -->
+
+            <div
+              class="coffee-table"
+              aria-hidden="true"
+            >
+              <span class="coffee-table-top"></span>
+              <span class="coffee-table-leg"></span>
+            </div>
+
+            <!-- Drawing Room Light 1 -->
+
+            <button
+              class="device light light-left on"
+              data-id="drawing-light-1"
+              type="button"
+              aria-label="Drawing Room Light 1"
+              aria-pressed="true"
+            >
+              <span class="light-halo"></span>
+
+              <span class="bulb">
+                <i></i>
+              </span>
+            </button>
+
+            <!-- Drawing Room Light 2 -->
+
+            <button
+              class="device light light-right on"
+              data-id="drawing-light-2"
+              type="button"
+              aria-label="Drawing Room Light 2"
+              aria-pressed="true"
+            >
+              <span class="light-halo"></span>
+
+              <span class="bulb">
+                <i></i>
+              </span>
+            </button>
+
+            <!-- Drawing Room Light 3 -->
+
+            <button
+              class="device light light-bottom on"
+              data-id="drawing-light-3"
+              type="button"
+              aria-label="Drawing Room Light 3"
+              aria-pressed="true"
+            >
+              <span class="light-halo"></span>
+
+              <span class="bulb">
+                <i></i>
+              </span>
+            </button>
+
+            <!-- Drawing Room Fan 1 -->
+
+            <button
+              class="device fan fan-top on"
+              data-id="drawing-fan-1"
+              type="button"
+              aria-label="Drawing Room Fan 1"
+              aria-pressed="true"
+            >
+              <span class="fan-head">
+                <span class="fan-blades">
+                  <i></i>
+                  <i></i>
+                  <i></i>
+                </span>
+
+                <span class="fan-center"></span>
+              </span>
+            </button>
+
+            <!-- Drawing Room Fan 2 -->
+
+            <button
+              class="device fan fan-bottom on"
+              data-id="drawing-fan-2"
+              type="button"
+              aria-label="Drawing Room Fan 2"
+              aria-pressed="true"
+            >
+              <span class="fan-head">
+                <span class="fan-blades">
+                  <i></i>
+                  <i></i>
+                  <i></i>
+                </span>
+
+                <span class="fan-center"></span>
+              </span>
+            </button>
+
+            <!-- Door -->
+
+            <div
+              class="room-door drawing-door"
+              aria-hidden="true"
+            ></div>
+
+          </section>
+
+          <!-- ===============================================
+          WORK ROOM 1
+          ================================================ -->
+
+          <section class="room work-room-1">
+
+            <span class="room-label blue">
+              WORK ROOM 1
+            </span>
+
+            <!-- Window -->
+
+            <div
+              class="window window-top"
+              aria-hidden="true"
+            ></div>
+
+            <!-- Desk 1 -->
+
+            <div
+              class="office-desk desk-1"
+              aria-hidden="true"
+            >
+              <span class="desk-top"></span>
+              <span class="monitor"></span>
+              <span class="monitor-stand"></span>
+              <span class="keyboard"></span>
+              <span class="office-chair"></span>
+            </div>
+
+            <!-- Desk 2 -->
+
+            <div
+              class="office-desk desk-2"
+              aria-hidden="true"
+            >
+              <span class="desk-top"></span>
+              <span class="monitor"></span>
+              <span class="monitor-stand"></span>
+              <span class="keyboard"></span>
+              <span class="office-chair"></span>
+            </div>
+
+            <!-- Desk 3 -->
+
+            <div
+              class="office-desk desk-3"
+              aria-hidden="true"
+            >
+              <span class="desk-top"></span>
+              <span class="monitor"></span>
+              <span class="monitor-stand"></span>
+              <span class="keyboard"></span>
+              <span class="office-chair"></span>
+            </div>
+
+            <!-- Desk 4 -->
+
+            <div
+              class="office-desk desk-4"
+              aria-hidden="true"
+            >
+              <span class="desk-top"></span>
+              <span class="monitor"></span>
+              <span class="monitor-stand"></span>
+              <span class="keyboard"></span>
+              <span class="office-chair"></span>
+            </div>
+
+            <!-- Work Room 1 Light 1 -->
+
+            <button
+              class="device light light-left on"
+              data-id="work1-light-1"
+              type="button"
+              aria-label="Work Room 1 Light 1"
+              aria-pressed="true"
+            >
+              <span class="light-halo"></span>
+
+              <span class="bulb">
+                <i></i>
+              </span>
+            </button>
+
+            <!-- Work Room 1 Light 2 -->
+
+            <button
+              class="device light light-right on"
+              data-id="work1-light-2"
+              type="button"
+              aria-label="Work Room 1 Light 2"
+              aria-pressed="true"
+            >
+              <span class="light-halo"></span>
+
+              <span class="bulb">
+                <i></i>
+              </span>
+            </button>
+
+            <!-- Work Room 1 Light 3 -->
+
+            <button
+              class="device light light-bottom on"
+              data-id="work1-light-3"
+              type="button"
+              aria-label="Work Room 1 Light 3"
+              aria-pressed="true"
+            >
+              <span class="light-halo"></span>
+
+              <span class="bulb">
+                <i></i>
+              </span>
+            </button>
+
+            <!-- Work Room 1 Fan 1 -->
+
+            <button
+              class="device fan fan-top on"
+              data-id="work1-fan-1"
+              type="button"
+              aria-label="Work Room 1 Fan 1"
+              aria-pressed="true"
+            >
+              <span class="fan-head">
+                <span class="fan-blades">
+                  <i></i>
+                  <i></i>
+                  <i></i>
+                </span>
+
+                <span class="fan-center"></span>
+              </span>
+            </button>
+
+            <!-- Work Room 1 Fan 2 -->
+
+            <button
+              class="device fan fan-bottom on"
+              data-id="work1-fan-2"
+              type="button"
+              aria-label="Work Room 1 Fan 2"
+              aria-pressed="true"
+            >
+              <span class="fan-head">
+                <span class="fan-blades">
+                  <i></i>
+                  <i></i>
+                  <i></i>
+                </span>
+
+                <span class="fan-center"></span>
+              </span>
+            </button>
+
+            <!-- Door -->
+
+            <div
+              class="room-door work1-door"
+              aria-hidden="true"
+            ></div>
+
+          </section>
+
+          <!-- ===============================================
+          WORK ROOM 2
+          ================================================ -->
+
+          <section class="room work-room-2">
+
+            <span class="room-label green">
+              WORK ROOM 2
+            </span>
+
+            <!-- Windows -->
+
+            <div
+              class="window window-top"
+              aria-hidden="true"
+            ></div>
+
+            <div
+              class="window window-right"
+              aria-hidden="true"
+            ></div>
+
+            <!-- Desk 1 -->
+
+            <div
+              class="office-desk desk-1"
+              aria-hidden="true"
+            >
+              <span class="desk-top"></span>
+              <span class="monitor"></span>
+              <span class="monitor-stand"></span>
+              <span class="keyboard"></span>
+              <span class="office-chair"></span>
+              <span class="desk-plant"></span>
+            </div>
+
+            <!-- Desk 2 -->
+
+            <div
+              class="office-desk desk-2"
+              aria-hidden="true"
+            >
+              <span class="desk-top"></span>
+              <span class="monitor"></span>
+              <span class="monitor-stand"></span>
+              <span class="keyboard"></span>
+              <span class="office-chair"></span>
+              <span class="desk-plant"></span>
+            </div>
+
+            <!-- Desk 3 -->
+
+            <div
+              class="office-desk desk-3"
+              aria-hidden="true"
+            >
+              <span class="desk-top"></span>
+              <span class="monitor"></span>
+              <span class="monitor-stand"></span>
+              <span class="keyboard"></span>
+              <span class="office-chair"></span>
+              <span class="desk-plant"></span>
+            </div>
+
+            <!-- Desk 4 -->
+
+            <div
+              class="office-desk desk-4"
+              aria-hidden="true"
+            >
+              <span class="desk-top"></span>
+              <span class="monitor"></span>
+              <span class="monitor-stand"></span>
+              <span class="keyboard"></span>
+              <span class="office-chair"></span>
+              <span class="desk-plant"></span>
+            </div>
+
+            <!-- Work Room 2 Light 1 -->
+
+            <button
+              class="device light light-left on"
+              data-id="work2-light-1"
+              type="button"
+              aria-label="Work Room 2 Light 1"
+              aria-pressed="true"
+            >
+              <span class="light-halo"></span>
+
+              <span class="bulb">
+                <i></i>
+              </span>
+            </button>
+
+            <!-- Work Room 2 Light 2 -->
+
+            <button
+              class="device light light-right on"
+              data-id="work2-light-2"
+              type="button"
+              aria-label="Work Room 2 Light 2"
+              aria-pressed="true"
+            >
+              <span class="light-halo"></span>
+
+              <span class="bulb">
+                <i></i>
+              </span>
+            </button>
+
+            <!-- Work Room 2 Light 3 -->
+
+            <button
+              class="device light light-bottom on"
+              data-id="work2-light-3"
+              type="button"
+              aria-label="Work Room 2 Light 3"
+              aria-pressed="true"
+            >
+              <span class="light-halo"></span>
+
+              <span class="bulb">
+                <i></i>
+              </span>
+            </button>
+
+            <!-- Work Room 2 Fan 1 -->
+
+            <button
+              class="device fan fan-top on"
+              data-id="work2-fan-1"
+              type="button"
+              aria-label="Work Room 2 Fan 1"
+              aria-pressed="true"
+            >
+              <span class="fan-head">
+                <span class="fan-blades">
+                  <i></i>
+                  <i></i>
+                  <i></i>
+                </span>
+
+                <span class="fan-center"></span>
+              </span>
+            </button>
+
+            <!-- Work Room 2 Fan 2 -->
+
+            <button
+              class="device fan fan-bottom on"
+              data-id="work2-fan-2"
+              type="button"
+              aria-label="Work Room 2 Fan 2"
+              aria-pressed="true"
+            >
+              <span class="fan-head">
+                <span class="fan-blades">
+                  <i></i>
+                  <i></i>
+                  <i></i>
+                </span>
+
+                <span class="fan-center"></span>
+              </span>
+            </button>
+
+            <!-- Door -->
+
+            <div
+              class="room-door work2-door"
+              aria-hidden="true"
+            ></div>
+
+          </section>
+
+          <!-- ===============================================
+          CORRIDOR
+          ================================================ -->
+
+          <section class="corridor">
+
+            <div
+              class="plant corridor-plant-left"
+              aria-hidden="true"
+            ></div>
+
+            <div
+              class="plant corridor-plant-right"
+              aria-hidden="true"
+            ></div>
+
+            <div
+              class="water-cooler"
+              aria-hidden="true"
+            ></div>
+
+            <div
+              class="entry-door"
+              aria-hidden="true"
+            ></div>
+
+            <strong class="entry-arrow">
+              ↑
+            </strong>
+
+            <strong class="entry-text">
+              ENTRY
+            </strong>
+
+          </section>
+
+        </div>
+      </section>
+
+      <!-- ===================================================
+      RIGHT-SIDE STATISTICS
+      ==================================================== -->
+
+      <aside class="stats-column">
+
+        <!-- Total Power Usage -->
+
+        <section class="power-card panel">
+          <h3>
+            <span
+              class="power-icon"
+              aria-hidden="true"
+            >
+              ϟ
+            </span>
+
+            TOTAL POWER USAGE
+          </h3>
+
+          <div class="gauge-wrap">
+            <svg
+              viewBox="0 0 240 240"
+              class="gauge-svg"
+              role="img"
+              aria-label="Total Power Usage Gauge"
+            >
+              <circle
+                class="gauge-bg"
+                cx="120"
+                cy="120"
+                r="92"
+              ></circle>
+
+              <circle
+                id="drawingGauge"
+                class="gauge-segment drawing-gauge"
+                cx="120"
+                cy="120"
+                r="92"
+              ></circle>
+
+              <circle
+                id="work1Gauge"
+                class="gauge-segment work1-gauge"
+                cx="120"
+                cy="120"
+                r="92"
+              ></circle>
+
+              <circle
+                id="work2Gauge"
+                class="gauge-segment work2-gauge"
+                cx="120"
+                cy="120"
+                r="92"
+              ></circle>
+            </svg>
+
+            <div class="gauge-center">
+              <strong id="totalPower">
+                0 W
+              </strong>
+
+              <span>Total</span>
+            </div>
+          </div>
+
+          <div class="legend">
+
+            <div>
+              <span class="legend-dot drawing-dot"></span>
+              Drawing Room
+            </div>
+
+            <strong id="drawingPower">
+              0 W
+            </strong>
+
+            <div>
+              <span class="legend-dot work1-dot"></span>
+              Work Room 1
+            </div>
+
+            <strong id="work1Power">
+              0 W
+            </strong>
+
+            <div>
+              <span class="legend-dot work2-dot"></span>
+              Work Room 2
+            </div>
+
+            <strong id="work2Power">
+              0 W
+            </strong>
+
+          </div>
+        </section>
+
+        <!-- Office Hours -->
+
+        <section class="hours-card panel">
+          <h3>
+            <span aria-hidden="true">
+              ◷
+            </span>
+
+            OFFICE HOURS
+          </h3>
+
+          <div>
+            <p>9:00 AM - 5:00 PM</p>
+
+            <span
+              id="officeHoursStatus"
+              class="open-pill"
+            >
+              OPEN
+            </span>
+          </div>
+        </section>
+
+      </aside>
+    </section>
+
+    <!-- =====================================================
+    LIVE DEVICE STATUS
+    ====================================================== -->
+
+    <section class="table-card panel">
+
+      <div class="section-title">
+
+        <div>
+          <h3>
+            <span
+              class="green-dot"
+              aria-hidden="true"
+            ></span>
+
+            LIVE DEVICE STATUS
+            (<span id="deviceCount">15</span> DEVICES)
+          </h3>
+
+          <p id="deviceListSummary">
+            Showing the 5 most recently updated devices.
+          </p>
+        </div>
+
+        
+
+      </div>
+
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Device</th>
+              <th>Room</th>
+              <th>Type</th>
+              <th>Status</th>
+              <th>Power</th>
+              <th>Last Changed</th>
+            </tr>
+          </thead>
+
+          <tbody
+            id="deviceTable"
+            aria-live="polite"
+          ></tbody>
+        </table>
+      </div>
+
+      <div class="device-table-actions">
+        <button
+          id="showMoreDevices"
+          class="show-more-button"
+          type="button"
+          aria-expanded="false"
+          aria-controls="deviceTable"
+        >
+          <span id="showMoreText">
+            Show More Devices
+          </span>
+
+          <span
+            id="hiddenDeviceCount"
+            class="device-count-badge"
+          >
+            10
+          </span>
+
+          <span
+            id="showMoreArrow"
+            class="show-more-arrow"
+            aria-hidden="true"
+          >
+            ↓
+          </span>
+        </button>
+      </div>
+
+    </section>
+
+    <!-- =====================================================
+    ACTIVE ALERTS
+    ====================================================== -->
+
+    <section
+      class="alerts-card panel"
+      id="alertsCard"
+    >
+
+      <div class="alerts-header-row">
+
+        <h3 class="alert-heading">
+          <span
+            class="alert-beacon"
+            aria-hidden="true"
+          >
+            ⚠
+          </span>
+
+          ACTIVE ALERTS
+          (<span id="alertCount">0</span>)
+        </h3>
+
+        <button
+          id="stopAlertAnimation"
+          class="stop-alert-button"
+          type="button"
+          aria-controls="alertsCard"
+          aria-pressed="false"
+          hidden
+        >
+          <span
+            class="stop-alert-icon"
+            aria-hidden="true"
+          >
+            ■
+          </span>
+
+          <span id="stopAlertText">
+            Acknowledge Alert
+          </span>
+        </button>
+
+      </div>
+
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Alert</th>
+              <th>Room</th>
+              <th>Device/Condition</th>
+              <th>Since</th>
+              <th>Duration</th>
+              <th>Severity</th>
+            </tr>
+          </thead>
+
+          <tbody
+            id="alertTable"
+            aria-live="polite"
+          ></tbody>
+        </table>
+      </div>
+
+      <p
+        id="noAlertsMessage"
+        class="no-alerts-message"
+        hidden
+      >
+        No active alerts at this time.
+      </p>
+
+      <a
+        href="#alertsCard"
+        class="view-alerts"
+      >
+        View All Alerts
+
+        <span aria-hidden="true">
+          →
+        </span>
+      </a>
+
+    </section>
+
+  </main>
+
+  <script src="https://cdn.socket.io/4.8.3/socket.io.min.js"></script>
+  <script type="module" src="app.js"></script>
+</body>
+</html>

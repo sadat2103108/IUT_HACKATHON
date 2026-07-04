@@ -28,8 +28,6 @@ export async function initializeBot() {
   });
 
   discordClient.on("messageCreate", async (discordMessage) => {
-    console.log("Message received:", discordMessage.content);
-
     if (discordMessage.author.bot) return;
     if (!discordMessage.content.startsWith(prefix)) return;
 
@@ -52,21 +50,19 @@ export async function initializeBot() {
 
 async function handleCommand(command, args, discordMessage) {
   if (command === "help") {
-    return sendDiscordMessage("Available commands: !help, !room <roomName>, !usage", {
+    return sendDiscordMessage("Available commands: !help, !status, !shipments", {
       replyTo: discordMessage
     });
   }
 
-  if (command === "room") {
-    const roomName = args.join(" ") || "unknown room";
-
-    return sendDiscordMessage(`Dummy room reply for ${roomName}.`, {
+  if (command === "status") {
+    return sendDiscordMessage("Logistics dashboard is online. Vehicle telemetry and shipment events are being monitored.", {
       replyTo: discordMessage
     });
   }
 
-  if (command === "usage") {
-    return sendDiscordMessage("Dummy usage reply: total power right now is 420W.", {
+  if (command === "shipments") {
+    return sendDiscordMessage("Shipment tracking is active. Use the REST API to inspect shipment, inventory, and incident data.", {
       replyTo: discordMessage
     });
   }

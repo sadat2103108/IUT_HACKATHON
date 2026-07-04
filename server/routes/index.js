@@ -1,6 +1,5 @@
-import { getHealth } from "../controllers/healthController.js";
+import { registerLogisticsRoutes } from "./logisticsRoutes.js";
 
-export function registerRoutes() {
-  console.log("Routes registered");
-  console.log("GET /health ->", getHealth());
+export function registerRoutes(app, service) {
+  registerLogisticsRoutes(app, service);
 }
